@@ -25,8 +25,8 @@ ENV	  JAVA_OPTIONS -Xmx512m
 # TODO: Drop the root user and make the content of /opt/app-root owned by user 1001
 COPY  ./s2i/bin/ /opt/app-root/bin/
 
-RUN  chgrp -R 0 /opt/app-root && \
-     chmod -R g=u /opt/app-root
+#RUN  chgrp -R 0 /opt/app-root && \
+#     chmod -R g=u /opt/app-root
 
 EXPOSE 8080
 # This default user is created in the openshift/base-centos7 image
