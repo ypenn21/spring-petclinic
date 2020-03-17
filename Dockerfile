@@ -24,6 +24,7 @@ ENV	  JAVA_OPTIONS -Xmx512m
 COPY ./s2i/bin/ /usr/libexec/s2i
 
 # TODO: Drop the root user and make the content of /opt/app-root owned by user 1001
+RUN chmod +x /usr/libexec/s2i
 RUN chown -R 1001:1001 /opt/app-root
 RUN chown -R 1001:1001 /usr/libexec/s2i
 EXPOSE 8080
