@@ -21,7 +21,9 @@ if [ "$(ls -A /tmp/artifacts/ 2>/dev/null)" ]; then
 fi
 
 echo "---> Installing application source..."
-cp -Rf /tmp/src/. ./
+if [ "$(ls -A /tmp/src/ 2>/dev/null)" ]; then
+ cp -Rf /tmp/src/. ./
+fi
 
 echo "---> Building application from source..."
 MAVEN_ARGS=${MAVEN_ARGS:-"install"}
