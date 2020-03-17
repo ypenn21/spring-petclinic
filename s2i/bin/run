@@ -1,0 +1,14 @@
+#!/bin/bash -e
+#
+# S2I run script for the 'registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:latest' image.
+# The run script executes the server that runs your application.
+#
+# For more information see the documentation:
+#	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
+#
+
+echo "Starting hello-java app..."
+echo "JVM options => $JAVA_OPTIONS"
+echo
+
+java $JAVA_OPTIONS -jar /opt/app-root/bin/hello-java.jar
