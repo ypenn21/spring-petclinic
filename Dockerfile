@@ -1,5 +1,5 @@
 # registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:latest
-FROM java:latest
+FROM registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:latest
 
 # TODO: Put the maintainer name in the image metadata
 # LABEL maintainer="Your Name <your@email.com>"
@@ -27,12 +27,12 @@ COPY  ./s2i/bin/ /opt/app-root/bin/
 
 #RUN  chgrp -R 0 /opt/app-root && \
 #     chmod -R g=u /opt/app-root
-
+COPY  ./target/spring-petclinic-2.2.0.BUILD-SNAPSHOT.jar /opt/app-root/app.jar
 EXPOSE 8080
 # This default user is created in the openshift/base-centos7 image
 USER 1001
 
-RUN /opt/app-root/bin/assemble
+#RUN /opt/app-root/bin/assemble
 CMD /opt/app-root/bin/run
 # TODO: Set the default port for applications built using this image
 # EXPOSE 8080
