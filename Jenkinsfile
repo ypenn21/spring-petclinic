@@ -30,13 +30,14 @@ pipeline {
 
         stage("Build, Bake, and Deploy") {
 
-            agent { label 'jenkins-slave-mvn35' }
+            agent { label 'maven' }
 
             stages{
 
                 stage('Build'){
 		       		steps{
-		            	sh "echo test"
+		            	sh "echo testing maven build"
+		            	sh "mvn clean install"
 		            }
 		        }
 
