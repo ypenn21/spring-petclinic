@@ -30,7 +30,7 @@ pipeline {
 
         stage("Build, Bake, and Deploy") {
 
-            agent { label 'jenkins-agent-maven-35-centos7' }
+            agent { label 'jenkins-agent-appdev' }
 
             stages{
 
