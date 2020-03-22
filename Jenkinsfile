@@ -44,10 +44,12 @@ pipeline {
 		        stage('Bake'){
 		            steps{
 		                script{
+		                    sh "echo baking"
+		                    sh "pwd"
 		                    openshift.loglevel(5)
 		                    timeout(15) { // in minutes
 			                    openshift.withCluster () {
-			                        def buildSelector = openshift.startBuild( "${APP_NAME} --from-file=${UBER_JAR_FILE}" )
+			                        def buildSelector = openshift.startBuild( "${APP_NAME} --from-file=/tmp/workspace/yanni-test/yanni-test-spring-petclinic/target/spring-petclinic-2.2.0.BUILD-SNAPSHOT.jar" )
 			                        buildSelector.logs('-f')
 			                    }
                             }
