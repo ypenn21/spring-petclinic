@@ -49,7 +49,7 @@ pipeline {
 		                    openshift.loglevel(5)
 		                    timeout(15) { // in minutes
 			                    openshift.withCluster () {
-			                        def buildSelector = openshift.startBuild( "${APP_NAME} --from-dir=." )
+			                        def buildSelector = openshift.startBuild( "java-docker --from-dir=." )
 			                        buildSelector.logs('-f')
 			                    }
                             }
