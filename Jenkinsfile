@@ -57,6 +57,16 @@ pipeline {
 		            }
 		        }
 
+		    	stage("Verify Deployment"){
+				    steps{
+				        script {
+				        	timeout(2) { // in minutes
+					        	verifyDeployment("pet-clinc", "${DEV_NAMESPACE}")
+		                    }
+				       	}
+				    }
+				}
+
             }
         }
     }
