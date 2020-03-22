@@ -37,7 +37,7 @@ pipeline {
                 stage('Build'){
 		       		steps{
 		            	sh "echo testing maven build"
-		            	sh "mvn clean install"
+		            	sh "mvn clean install -DskipTests"
 		            }
 		        }
 
