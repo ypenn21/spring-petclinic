@@ -49,7 +49,7 @@ pipeline {
 		                    openshift.loglevel(5)
 		                    timeout(15) { // in minutes
 			                    openshift.withCluster () {
-			                        def buildSelector = openshift.startBuild( "${APP_NAME} --from-file=/tmp/workspace/yanni-test/yanni-test-spring-petclinic/target/spring-petclinic-2.2.0.BUILD-SNAPSHOT.jar" )
+			                        def buildSelector = openshift.startBuild( "${APP_NAME} --from-dir=." )
 			                        buildSelector.logs('-f')
 			                    }
                             }
