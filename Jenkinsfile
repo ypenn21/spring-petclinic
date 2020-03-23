@@ -61,7 +61,7 @@ pipeline {
 				    steps{
 				        script {
 				        	timeout(2) { // in minutes
-					        	verifyDeployment("pet-clinc", "${DEV_NAMESPACE}")
+					        	verifyDeployment("pet-clinc", "yanni-test")
 		                    }
 				       	}
 				    }
