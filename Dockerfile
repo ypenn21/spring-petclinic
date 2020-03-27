@@ -1,5 +1,6 @@
 # registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:latest
-FROM registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:latest
+FROM registry.redhat.io/redhat-openjdk-18/openjdk18-openshift:latest
+#172.30.1.1:5000/yanni-test/java:latest
 
 # TODO: Put the maintainer name in the image metadata
 # LABEL maintainer="Your Name <your@email.com>"
