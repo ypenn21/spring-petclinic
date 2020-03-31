@@ -29,19 +29,19 @@ pipeline {
 
         stage("Build, Bake, and Deploy") {
 
-		    stage("Verify Deployment"){
-				steps{
+            agent { label 'maven' }
+
+            stages{
+
+		        stage("Verify Deployment"){
+				    steps{
 				        script {
 				        	timeout(2) { // in minutes
 					        	verifyDeployment("pet-clinc", "yanni-test")
 		                    }
 				       	}
-				}
-			}
-
-            agent { label 'maven' }
-
-            stages{
+				    }
+			    }
 
                 stage('Build'){
 		       		steps{
