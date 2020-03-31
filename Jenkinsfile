@@ -21,7 +21,7 @@ pipeline {
 		        stage("Verify Environment variable "){
 				    steps{
 				        script {
-				            def map = test()
+				            Map map = test()
 				            sh "The variable is ${map}"
 				            sh "The variable is ${map.server}"
 				       	}
