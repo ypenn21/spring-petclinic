@@ -23,7 +23,7 @@ pipeline {
 				        script {
 				            Map map = test()
 				            sh "The variable is ${map}"
-				            sh "The variable is ${map.server}"
+				            sh "The variable is "+map.get("server", "this is wrong")
 				       	}
 				    }
 			    }
