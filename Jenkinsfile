@@ -15,6 +15,7 @@ pipeline {
 
         stage("Build, Bake, and Deploy") {
 
+            properties = new org.citi.Properties()
             agent { label 'maven' }
 
             stages{
@@ -22,10 +23,7 @@ pipeline {
 		        stage("Verify Environment variable "){
 				    steps{
 				        script {
-				            sh "The environment is ${environment}"
-				            InitializeEnv(environment)
-				            sh "The environment is ${environment}"
-				            sh "The variable is ${SERVER}"
+				            sh "The variable is ${properties.SERVER}"
 				       	}
 				    }
 			    }
