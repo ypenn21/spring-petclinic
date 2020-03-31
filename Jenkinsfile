@@ -36,7 +36,9 @@ pipeline {
 		        stage("Verify Deployment Test"){
 				    steps{
 				        script {
+				            sh "${server}"
 				        	timeout(2) { // in minutes
+
 					        	verifyDeployment("pet-clinc", "yanni-test")
 		                    }
 				       	}
