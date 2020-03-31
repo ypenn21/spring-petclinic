@@ -8,7 +8,7 @@ import java.util.logging.Logger
 
 final def LOG = Logger.getLogger("LABS")
 
-def gitRepo = System.getenv('SHARED_LIB_REPO') ?: "labs-shared-library-git"
+def gitRepo = System.getenv('SHARED_LIB_REPO') ?: "https://github.com/ypenn21/jenkins-shared-lib"
 // https://github.com/samrocketman/jenkins-bootstrap-shared/tree/master/scripts/init.groovy.d
 if(gitRepo?.trim()) {
 
@@ -16,9 +16,9 @@ if(gitRepo?.trim()) {
 
   def sharedLibrary = Jenkins.getInstance().getDescriptor("org.jenkinsci.plugins.workflow.libs.GlobalLibraries")
 
-  def libraryName = System.getenv('SHARED_LIB_NAME') ?: "labs-shared-library"
+  def libraryName = System.getenv('SHARED_LIB_NAME') ?: "jenkins-shared-library"
   def gitRef = System.getenv('SHARED_LIB_REF') ?: "master"
-  def secretId = System.getenv('SHARED_LIB_SECRET') ?: "secret"
+  def secretId = System.getenv('SHARED_LIB_SECRET') ?: "git-secret"
 
   //append namespace to secret as it appears in Jenkins
   if(secretId) {
