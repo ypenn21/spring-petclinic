@@ -3,7 +3,7 @@ pipeline {
 
    agent { label 'master' }
 
-   environment {}
+   environment {APP_NAME = "java-pet-docker"}
 
 	options {
         buildDiscarder(logRotator(numToKeepStr:'10'))
