@@ -33,7 +33,7 @@ pipeline {
 
             stages{
 
-		        stage("Verify Deployment"){
+		        stage("Verify Deployment Test"){
 				    steps{
 				        script {
 				        	timeout(2) { // in minutes
