@@ -23,7 +23,7 @@ pipeline {
 				        script {
 				            def properties2 = new org.citi.Properties()
 				            sh "The variable is ${test()}"
-				            sh "The variable is ${properties2.SERVER()}"
+				            sh "The variable is ${properties2.server()}"
 				       	}
 				    }
 			    }
