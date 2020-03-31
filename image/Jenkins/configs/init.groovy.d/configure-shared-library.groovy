@@ -9,7 +9,7 @@ import java.util.logging.Logger
 final def LOG = Logger.getLogger("LABS")
 
 def gitRepo = System.getenv('SHARED_LIB_REPO') ?: "labs-shared-library-git"
-
+// https://github.com/samrocketman/jenkins-bootstrap-shared/tree/master/scripts/init.groovy.d
 if(gitRepo?.trim()) {
 
   LOG.log(Level.INFO,  'Configuring shared library (implicit)...' )
