@@ -21,7 +21,6 @@ pipeline {
 		        stage("Verify Environment variable "){
 				    steps{
 				        script {
-				            def properties = new org.citi.Properties()
 				            sh "The variable is ${properties}"
 				            sh "The variable is ${properties.SERVER}"
 				       	}
