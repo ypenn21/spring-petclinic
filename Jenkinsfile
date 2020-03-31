@@ -22,7 +22,7 @@ pipeline {
 				    steps{
 				        script {
 				            sh "The variable is ${properties}"
-				            sh "The variable is ${properties.SERVER}"
+				            sh "The variable is " + properties.SERVER
 				       	}
 				    }
 			    }
