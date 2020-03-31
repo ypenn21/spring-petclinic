@@ -22,7 +22,9 @@ pipeline {
 				    steps{
 				        script {
 				            sh "The variable is ${properties}"
-				            sh "The variable is " + properties.SERVER
+				            def server = properties.SERVER()
+				            sh "The variable is ${server}"
+				            sh "The variable is " + properties.SERVER()
 				       	}
 				    }
 			    }
