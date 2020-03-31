@@ -3,6 +3,8 @@ pipeline {
 
    agent { label 'master' }
 
+   environment {}
+
 	options {
         buildDiscarder(logRotator(numToKeepStr:'10'))
         timeout(time: 60, unit: 'MINUTES')
@@ -20,8 +22,10 @@ pipeline {
 		        stage("Verify Environment variable "){
 				    steps{
 				        script {
-				            verifyDeployment("pet-clinc", "yanni-test")
-				            sh "The variable is ${server}"
+				            sh "The environment is ${environment}"
+				            InitializeEnv(environment)
+				            sh "The environment is ${environment}"
+				            sh "The variable is ${SERVER}"
 				       	}
 				    }
 			    }
