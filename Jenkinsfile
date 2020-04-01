@@ -5,7 +5,8 @@ import org.citi.Properties
 echo Properties.server()
 
 setEnv()
-
+def prop = new Properties()
+echo prop.instanceVariable
 pipeline {
 
    agent { label 'master' }
@@ -31,6 +32,7 @@ pipeline {
 		        stage("Verify Environment variable "){
 				    steps{
 				        script {
+				            sh "echo The prop.instanceVariable is ${prop.instanceVariable}"
 				            sh "echo The APP_NAME is ${APP_NAME}"
 				            sh "echo The TAG is ${TAG}"
 				            sh "echo The YANNI is ${YANNI}"
