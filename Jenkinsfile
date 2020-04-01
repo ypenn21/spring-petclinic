@@ -2,12 +2,13 @@
 import org.citi.Properties
 echo Properties.server()
 
+setEnv()
+
 pipeline {
 
    agent { label 'master' }
 
    environment {
-        APP_NAME = "java-pet-docker"
         MY_SERVER = org.citi.Properties.server()
         MY_MAP = "test"
    }
@@ -28,6 +29,8 @@ pipeline {
 		        stage("Verify Environment variable "){
 				    steps{
 				        script {
+				            sh "echo The APP_NAME is ${APP_NAME}"
+				            sh "echo The TAG is ${TAG}"
 				            def map = test()
 				            sh "echo The variable is ${MY_SERVER}"
 				            sh "echo The variable is ${map}"
