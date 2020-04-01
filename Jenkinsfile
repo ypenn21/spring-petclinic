@@ -4,10 +4,6 @@
 import org.citi.Properties
 echo Properties.server()
 
-def map3 = [server:'yanni.com', date:'03/31/2020']
-println map3.server
-println map3.get("server")
-
 setEnv()
 def prop2 = new Properties()
 echo prop2.instanceVariable
@@ -36,6 +32,11 @@ pipeline {
 		        stage("Verify Environment variable "){
 				    steps{
 				        script {
+				            def map3 = [server:'yanni.com', date:'03/31/2020']
+				            def server8 = map3.get("server")
+                            sh "echo ${map3.server}"
+                            sh "echo ${server8}"
+
 				            def prop = new Properties()
 				            // properties.SERVER() doesn't work
 				            sh "echo The prop.instanceVariable is ${prop.instanceVariable}"
