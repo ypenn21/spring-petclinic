@@ -7,7 +7,7 @@ pipeline {
 
    agent { label 'master' }
 
-   environment = properties2.environment
+   properties2.environment
 
 	options {
         buildDiscarder(logRotator(numToKeepStr:'10'))
