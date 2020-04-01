@@ -1,6 +1,6 @@
 #!/usr/bin/groovy
-
-echo org.citi.Properties.server()
+import org.citi.Properties
+echo Properties.server()
 
 pipeline {
 
@@ -31,8 +31,8 @@ pipeline {
 				            def map = test()
 				            sh "echo The variable is ${MY_SERVER}"
 				            sh "echo The variable is ${map}"
-				            sh "echo The variable is${org.citi.Properties.server()}"
-				            sh "echo The variable is ${org.citi.Properties.myGlobalVar}"
+				            sh "echo The variable is ${Properties.server()}"
+				            sh "echo The variable is ${Properties.myGlobalVar}"
 				            sh "echo ${MY_MAP}"
 				            sh "echo The variable is ${map}"
 				       	}
