@@ -7,7 +7,7 @@ pipeline {
 
    agent { label 'master' }
 
-   properties2.environment
+   environment properties2.environment()
 
 	options {
         buildDiscarder(logRotator(numToKeepStr:'10'))
@@ -26,8 +26,9 @@ pipeline {
 				    steps{
 				        script {
 				            Map map = test()
+				            sh "echo ${myMap}"
 				            sh "The variable is ${map}"
-				            sh "The variable is ${APP_NAME}"
+				            sh "The variable is ${MY_SERVER}"
 				       	}
 				    }
 			    }
