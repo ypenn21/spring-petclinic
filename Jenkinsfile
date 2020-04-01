@@ -29,11 +29,11 @@ pipeline {
 
 		        stage("Verify Environment variable "){
 				    steps{
-				        //def properties2 = new org.citi.Properties()
+				        def server = properties2.server()
 				        script {
 				            Map map = test()
 				            sh "echo ${myMap}"
-				            sh "echo ${myMap.server}"
+				            sh "echo ${server}"
 				            sh "The variable is ${map}"
 				            sh "The variable is ${MY_SERVER}"
 				       	}
