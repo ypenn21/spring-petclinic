@@ -1,7 +1,7 @@
 #!/usr/bin/groovy
 
 
-@Library('my-shared-library') _
+@Library('jenkins-shared-library') _
 def properties2 = new org.citi.Properties()
 echo properties2.server()
 
