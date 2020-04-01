@@ -1,4 +1,6 @@
 #!/usr/bin/groovy
+
+//uses jenkins-shared-libraries can use as reference https://github.com/vfarcic/jenkins-shared-libraries/tree/master/vars
 import org.citi.Properties
 echo Properties.server()
 
