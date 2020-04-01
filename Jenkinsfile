@@ -32,6 +32,7 @@ pipeline {
 				            sh "echo The variable is ${MY_SERVER}"
 				            sh "echo The variable is ${map}"
 				            sh "echo The variable is${org.citi.Properties.server()}"
+				            sh "echo The variable is ${org.citi.Properties.myGlobalVar}"
 				            sh "echo ${MY_MAP}"
 				            sh "echo The variable is ${map}"
 				       	}
