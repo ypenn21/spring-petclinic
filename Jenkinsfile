@@ -45,6 +45,7 @@ pipeline {
 				            sh "echo The TAG is ${TAG}"
 				            sh "echo The YANNI is ${YANNI}"
 
+                            // seems to return a string instead of a actual map. Even the function is defined as returning a map
 				            Map map = test()
 				            def value = map.server
 				            // displays no value
