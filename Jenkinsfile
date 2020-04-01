@@ -33,6 +33,7 @@ pipeline {
 				    steps{
 				        script {
 				            def prop = new Properties()
+				            properties.SERVER()
 				            sh "echo The prop.instanceVariable is ${prop.instanceVariable}"
 				            sh "echo The prop2.instanceVariable is ${prop2.instanceVariable}"
 				            sh "echo The APP_NAME is ${APP_NAME}"
@@ -43,8 +44,8 @@ pipeline {
 				            sh "echo The variable MY_SERVER is ${MY_SERVER}"
 				            sh "echo The variable globalVar is ${globalVar}"
 				            sh "echo The variable map is ${map}"
-				            sh "echo The variable Properties.server() is ${Properties.server()}"
-				            sh "echo The variable Properties.myGlobalVar is ${Properties.myGlobalVar}"
+				            sh "echo The variable Properties server is ${Properties.server()}"
+				            sh "echo The variable Properties myGlobalVar is ${Properties.myGlobalVar}"
 				            sh "echo ${MY_MAP}"
 				            sh "echo The variable is ${map}"
 				       	}
