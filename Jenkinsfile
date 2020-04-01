@@ -1,6 +1,6 @@
 #!/usr/bin/groovy
 
-echo new org.citi.Properties.server()
+echo org.citi.Properties.server()
 
 pipeline {
 
@@ -8,7 +8,7 @@ pipeline {
 
    environment {
         APP_NAME = "java-pet-docker"
-        MY_SERVER = new org.citi.Properties.server()
+        MY_SERVER = org.citi.Properties.server()
         myMap = test()
    }
 
