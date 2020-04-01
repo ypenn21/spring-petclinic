@@ -10,7 +10,10 @@ pipeline {
 
    agent { label 'master' }
 
-   environment {APP_NAME = "java-pet-docker"}
+   environment {
+        APP_NAME = "java-pet-docker"
+        MY_SERVER = properties2.server()
+   }
 
 	options {
         buildDiscarder(logRotator(numToKeepStr:'10'))
