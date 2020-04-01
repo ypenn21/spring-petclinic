@@ -1,7 +1,5 @@
 #!/usr/bin/groovy
 
-
-@Library('jenkins-shared-library') _
 def properties2 = new org.citi.Properties()
 echo properties2.server()
 
@@ -13,6 +11,7 @@ pipeline {
    environment {
         APP_NAME = "java-pet-docker"
         MY_SERVER = properties2.server()
+        myMap = test()
    }
 
 	options {
@@ -33,9 +32,8 @@ pipeline {
 				        //def properties2 = new org.citi.Properties()
 				        script {
 				            Map map = test()
-				            def test = properties2.server()
-				            sh " The variable is ${map}"
-				            sh " The variable is ${test}"
+				            sh "The variable is ${map}"
+				            sh "The variable is ${MY_SERVER}"
 				       	}
 				    }
 			    }
