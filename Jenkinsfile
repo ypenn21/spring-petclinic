@@ -33,10 +33,12 @@ pipeline {
 				            sh "echo The TAG is ${TAG}"
 				            sh "echo The YANNI is ${YANNI}"
 				            def map = test()
-				            sh "echo The variable is ${MY_SERVER}"
-				            sh "echo The variable is ${map}"
-				            sh "echo The variable is ${Properties.server()}"
-				            sh "echo The variable is ${Properties.myGlobalVar}"
+				            def globalVar = Properties.myGlobalVar
+				            sh "echo The variable MY_SERVER is ${MY_SERVER}"
+				            sh "echo The variable globalVar is ${globalVar}"
+				            sh "echo The variable map is ${map}"
+				            sh "echo The variable Properties.server() is ${Properties.server()}"
+				            sh "echo The variable Properties.myGlobalVar is ${Properties.myGlobalVar}"
 				            sh "echo ${MY_MAP}"
 				            sh "echo The variable is ${map}"
 				       	}
