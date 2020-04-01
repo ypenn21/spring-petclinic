@@ -29,9 +29,10 @@ pipeline {
 				    steps{
 				        script {
 				            Map map = test()
-				            sh "The variable is ${MY_SERVER}"
-				            sh "The variable is ${MY_MAP}"
-				            sh "echo ${org.citi.Properties.server()}"
+				            sh "echo The variable is ${MY_SERVER}"
+				            sh "echo The variable is ${map}"
+				            sh "echo The variable is${org.citi.Properties.server()}"
+				            sh "echo ${MY_MAP}"
 				            sh "The variable is ${map}"
 				       	}
 				    }
