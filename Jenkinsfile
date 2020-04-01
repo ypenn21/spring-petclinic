@@ -3,11 +3,13 @@
 def properties2 = new org.citi.Properties()
 echo properties2.server()
 
+def env = properties2.environment()
+
 pipeline {
 
    agent { label 'master' }
 
-   environment properties2.environment()
+   environment env
 
 	options {
         buildDiscarder(logRotator(numToKeepStr:'10'))
