@@ -3,13 +3,15 @@
 def properties2 = new org.citi.Properties()
 echo properties2.server()
 
-Closure env = properties2.environment()
-
 pipeline {
 
    agent { label 'master' }
 
-   environment(env)
+   environment {
+        APP_NAME = "java-pet-docker"
+        MY_SERVER = properties2.server()
+        myMap = test()
+   }
 
 	options {
         buildDiscarder(logRotator(numToKeepStr:'10'))
@@ -28,6 +30,7 @@ pipeline {
 				    steps{
 				        script {
 				            Map map = test()
+				            def testMap = evaluate(myMap)
 				            sh "echo ${myMap}"
 				            sh "The variable is ${map}"
 				            sh "The variable is ${MY_SERVER}"
