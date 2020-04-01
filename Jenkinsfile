@@ -30,7 +30,7 @@ pipeline {
 				        script {
 				            Map map = test()
 				            sh "The variable is ${MY_SERVER}"
-				            sh "echo ${myMap}"
+				            sh "The variable is ${myMap}"
 				            sh "echo ${org.citi.Properties.server()}"
 				            sh "The variable is ${map}"
 				       	}
