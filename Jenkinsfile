@@ -31,6 +31,7 @@ pipeline {
 				        script {
 				            sh "echo The APP_NAME is ${APP_NAME}"
 				            sh "echo The TAG is ${TAG}"
+				            sh "echo The YANNI is ${YANNI}"
 				            def map = test()
 				            sh "echo The variable is ${MY_SERVER}"
 				            sh "echo The variable is ${map}"
