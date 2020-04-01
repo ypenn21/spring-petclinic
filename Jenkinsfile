@@ -4,6 +4,10 @@
 import org.citi.Properties
 echo Properties.server()
 
+def map3 = [server:'yanni.com', date:'03/31/2020']
+println map3.server
+println map3.get("server")
+
 setEnv()
 def prop2 = new Properties()
 echo prop2.instanceVariable
