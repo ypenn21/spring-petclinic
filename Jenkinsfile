@@ -32,8 +32,8 @@ pipeline {
 				        //def properties2 = new org.citi.Properties()
 				        script {
 				            Map map = test()
-				            sh "${myMap}"
-				            sh "${myMap.server}"
+				            sh "echo ${myMap}"
+				            sh "echo ${myMap.server}"
 				            sh "The variable is ${map}"
 				            sh "The variable is ${MY_SERVER}"
 				       	}
