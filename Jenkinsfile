@@ -30,7 +30,7 @@ pipeline {
 				    steps{
 				        script {
 				            Map map = test()
-				            def testMap = evaluate(myMap)
+				            def testMap = evaluate(map)
 				            sh "echo ${myMap}"
 				            sh "The variable is ${map}"
 				            sh "The variable is ${MY_SERVER}"
