@@ -9,7 +9,7 @@ pipeline {
    environment {
         APP_NAME = "java-pet-docker"
         MY_SERVER = org.citi.Properties.server()
-        myMap = test()
+        MY_MAP = test()
    }
 
 	options {
@@ -30,7 +30,7 @@ pipeline {
 				        script {
 				            Map map = test()
 				            sh "The variable is ${MY_SERVER}"
-				            sh "The variable is ${myMap}"
+				            sh "The variable is ${MY_MAP}"
 				            sh "echo ${org.citi.Properties.server()}"
 				            sh "The variable is ${map}"
 				       	}
