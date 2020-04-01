@@ -39,9 +39,12 @@ pipeline {
 				            sh "echo The APP_NAME is ${APP_NAME}"
 				            sh "echo The TAG is ${TAG}"
 				            sh "echo The YANNI is ${YANNI}"
+
 				            Map map = test()
 				            def value = map.server
+				            // displays no value
 				            sh 'echo ${value}'
+
 				            def globalVar = Properties.myGlobalVar
 				            sh "echo The variable MY_SERVER is ${MY_SERVER}"
 				            sh "echo The variable globalVar is ${globalVar}"
