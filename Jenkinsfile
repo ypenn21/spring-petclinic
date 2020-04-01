@@ -32,9 +32,9 @@ pipeline {
 		        stage("Verify Environment variable "){
 				    steps{
 				        script {
-				            def prop2 = new Properties()
-				            sh "echo The prop2.instanceVariable is ${prop2.instanceVariable}"
+				            def prop = new Properties()
 				            sh "echo The prop.instanceVariable is ${prop.instanceVariable}"
+				            sh "echo The prop2.instanceVariable is ${prop2.instanceVariable}"
 				            sh "echo The APP_NAME is ${APP_NAME}"
 				            sh "echo The TAG is ${TAG}"
 				            sh "echo The YANNI is ${YANNI}"
