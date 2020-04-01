@@ -33,7 +33,7 @@ pipeline {
 				            sh "echo The variable is ${map}"
 				            sh "echo The variable is${org.citi.Properties.server()}"
 				            sh "echo ${MY_MAP}"
-				            sh "The variable is ${map}"
+				            sh "echo The variable is ${map}"
 				       	}
 				    }
 			    }
