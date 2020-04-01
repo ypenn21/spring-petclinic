@@ -9,7 +9,7 @@ pipeline {
    environment {
         APP_NAME = "java-pet-docker"
         MY_SERVER = org.citi.Properties.server()
-        MY_MAP = test()
+        MY_MAP = "test"
    }
 
 	options {
