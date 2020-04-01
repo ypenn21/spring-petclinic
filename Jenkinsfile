@@ -33,7 +33,7 @@ pipeline {
 				    steps{
 				        script {
 				            def prop = new Properties()
-				            properties.SERVER()
+				            // properties.SERVER() doesn't work
 				            sh "echo The prop.instanceVariable is ${prop.instanceVariable}"
 				            sh "echo The prop2.instanceVariable is ${prop2.instanceVariable}"
 				            sh "echo The APP_NAME is ${APP_NAME}"
