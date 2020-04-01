@@ -3,7 +3,7 @@
 def properties2 = new org.citi.Properties()
 echo properties2.server()
 
-echo SERVER()
+echo properties.SERVER()
 pipeline {
 
    agent { label 'master' }
