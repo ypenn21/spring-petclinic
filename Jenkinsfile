@@ -1,4 +1,11 @@
 #!/usr/bin/groovy
+
+
+@Library('my-shared-library') _
+def properties2 = new org.citi.Properties()
+echo properties2.server()
+
+
 pipeline {
 
    agent { label 'master' }
@@ -20,6 +27,7 @@ pipeline {
 
 		        stage("Verify Environment variable "){
 				    steps{
+				        //def properties2 = new org.citi.Properties()
 				        script {
 				            Map map = test()
 				            sh "The variable is ${map}"
