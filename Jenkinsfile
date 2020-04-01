@@ -9,7 +9,7 @@ pipeline {
 
    agent { label 'master' }
 
-   environment env
+   environment env()
 
 	options {
         buildDiscarder(logRotator(numToKeepStr:'10'))
