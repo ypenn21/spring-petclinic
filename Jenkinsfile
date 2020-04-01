@@ -1,7 +1,6 @@
 #!/usr/bin/groovy
 
-def properties2 = new org.citi.Properties()
-echo properties2.server()
+echo Properties.server()
 
 pipeline {
 
@@ -9,7 +8,7 @@ pipeline {
 
    environment {
         APP_NAME = "java-pet-docker"
-        MY_SERVER = properties2.server()
+        MY_SERVER = Properties.server()
         myMap = test()
    }
 
@@ -30,7 +29,6 @@ pipeline {
 				    steps{
 				        script {
 				            Map map = test()
-				            def testMap = evaluate(map)
 				            sh "echo ${myMap}"
 				            sh "The variable is ${map}"
 				            sh "The variable is ${MY_SERVER}"
