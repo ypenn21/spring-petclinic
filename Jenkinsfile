@@ -1,7 +1,7 @@
 #!/usr/bin/groovy
 import org.citi.Properties
 echo Properties.server()
-
+Properties.myGlobalVar = "change it"
 pipeline {
 
    agent { label 'master' }
