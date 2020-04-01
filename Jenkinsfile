@@ -3,7 +3,7 @@
 def properties2 = new org.citi.Properties()
 echo properties2.server()
 
-
+echo SERVER()
 pipeline {
 
    agent { label 'master' }
@@ -29,7 +29,6 @@ pipeline {
 
 		        stage("Verify Environment variable "){
 				    steps{
-				        def server = properties2.server()
 				        script {
 				            Map map = test()
 				            sh "echo ${myMap}"
