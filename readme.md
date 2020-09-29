@@ -138,3 +138,18 @@ The Spring PetClinic sample application is released under version 2.0 of the [Ap
 [spring-petclinic-graphql]: https://github.com/spring-petclinic/spring-petclinic-graphql
 [spring-petclinic-kotlin]: https://github.com/spring-petclinic/spring-petclinic-kotlin
 [spring-petclinic-rest]: https://github.com/spring-petclinic/spring-petclinic-rest
+
+# openshift deployment 
+
+import the mysql database image 
+oc import-image rhel8/mysql-80 --from=registry.redhat.io/rhel8/mysql-80 --confirm
+oc new-build —binary=true —name=java-docker —strategy=docker
+oc create secret docker-registry redhat-registry —docker-server=registry.redhat.io —docker-username=ypenn21 —docker-password=password —docker-email=yanni@gmail.com
+oc set build-secret--pull bc/bc-need-pull-image redhat-registry
+
+you must run the start-build command from the root of this repository
+oc start-build java-docker —from-dir=.
+
+oc new-app -e MYSQL_USER=petclinic -e MYSQL_PASSWORD=petclinic -e MYSQL_DATABASE=petclinic namespace/mysql-80:latest
+oc new-app namespace/java-docker:latest
+
