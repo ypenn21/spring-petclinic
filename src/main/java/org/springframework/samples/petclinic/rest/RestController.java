@@ -17,5 +17,10 @@ public class RestController {
 				String.class);
 		return response.toString();
 	}
+    
+    @GetMapping("/api/test")
+	public String testSuccess() {
+		return "success";
+	}
 
 }
